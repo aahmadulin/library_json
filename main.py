@@ -1,9 +1,9 @@
 import json
-import os
+from os.path import exists
 from library import Library, Book
 
 def load_books_from_file(filename):
-    if os.path.exists(filename):
+    if exists(filename):
         with open(filename, 'r') as f:
             return json.load(f)
     return []
